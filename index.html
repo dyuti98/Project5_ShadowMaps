@@ -1,0 +1,518 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Poiret+One|Teko:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            background-color: #eeeeee;
+        }
+
+        .parallax {
+            /* The image used */
+            background-image: url('images/pic.jpeg');
+
+            /* Full height */
+            height: 10%;
+
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        a{
+            color: #f2f2f2;
+            text-decoration: none;
+            list-style-type: none;
+        }
+        nav {
+            padding: 0px;
+            text-align: center;
+            position: fixed;
+            margin:-8px;
+            background-color:#333;
+            width: 100%;
+            font-family: 'PT Sans', sans-serif;
+            line-height:65px;
+
+        }
+        nav > ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            background: #333;
+
+            float: left;
+        }
+        nav > ul > li {
+            float: left;
+            width: 140px;
+            height: 65px;
+            font-size: large;
+            position: relative;
+            text-transform: uppercase;
+            font-size: 17px;
+            color: #f2f2f2;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        nav > ul > li:hover {
+            background: #888;
+
+        }
+
+        ul.drop-menu {
+            position: absolute;
+            top: 100%;
+            left: 0%;
+            width: 100%;
+            padding: 0;
+        }
+        ul.drop-menu li {
+            background: #ababab;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        ul.drop-menu li:hover {
+            background: #606060;
+        }
+        ul.drop-menu li:last-child {
+            border-radius: 0px 0px 5px 5px;
+        }
+
+        ul.drop-menu li {
+            display: none;
+        }
+
+        li:hover > ul.drop-menu li {
+            display: block;
+        }
+        #logo{
+            cursor: none;
+            font-size: 70px;
+            float: left;
+            left: 0;
+            padding: -5px;
+            margin-left: -10px;
+            width: 700px;
+            font-family: 'Poiret One', cursive;
+        }
+        #logo:hover{
+            background: #333;
+            cursor: default;
+        }
+
+        #main-heading{
+            margin: 40px;
+            margin-bottom: 15px;
+            margin-left: 10px;
+            padding-bottom: -20px ;
+            font-size: 50px;
+            border-bottom: solid 2.5px darkcyan;
+            font-family: 'Teko', sans-serif;
+            color: #333333;
+
+        }
+        .content{
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 20px;
+
+            margin: 20px; margin-left: 15px;
+        }
+
+        .sub-heading{
+            margin: 20px;
+            margin-left: 15px;
+            font-family: 'Roboto Condensed',sans-serif;
+            font-size: 30px;
+            color: #ff5f2a;
+        }
+        .special{
+            color:#efefef; background-color: #444; display: inline; border: solid #38a8d1 2px;padding: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<nav id="Navigation Container">
+    <ul> <li id="logo">IS F311 Project</li>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#program">The Program</a></li>
+        <li><a href="#samples">Animation</a>
+        <li><a href="#team">The team</a>
+
+        </li>
+
+
+    </ul>
+</nav>
+<div class="parallax"></div>
+
+<div id="intro" class="subjects">
+    <div id="main-heading">Introduction</div>
+    <div class="content">This HTML page has been created for the Computer Graphics Project Sem 1 2018-19 under Prof. Tathagata Ray.
+        <h2></h2>
+        This project implements 'Casting curved shadows on curved surfaces' by Lance Williams. He gave the idea of shadow maps based on the depth buffer to project shadows instead of shadow volumes.<br><br>
+
+        Shadows are created by testing whether a pixel is visible from the light source, by comparing the pixel to a z-buffer or depth image of the light source's view, stored in the form of a texture.The light's view is rendered, storing the depth of every surface it sees (the shadow map). Next, the regular scene is rendered comparing the depth of every point drawn (as if it were being seen by the light, rather than the eye) to this depth map.
+		<br>This technique is less accurate than shadow volumes, but the shadow map can be a faster alternative depending on how much fill time is required for either technique in a particular application and therefore may be more suitable to real time applications. In addition, shadow maps do not require the use of an additional stencil buffer, and can be modified to produce shadows with a soft edge. Unlike shadow volumes, however, the accuracy of a shadow map is limited by its resolution.
+    </div>
+    <img src="images/intro.jpg" style="margin-left: 20px;" height="60%" width="45%"><br>
+
+</div>
+
+<div id="program" class="subjects">
+    <div id="main-heading">THE PROGRAM</div>
+    <div class="content">
+        The Project directory has three major folders: CG Project, Doxygen and HTML Doc.<br>
+        The CG Project directory contains all the include files, makefile, objs, shaders and the main.cpp<br>
+        The doxygen folder contains the output of doxygen which can be viewed in /Doxygen/html/index.html<br>
+        The HTML Doc contains index.html which is a documentation of the code explaining different aspects with screenshots of the classroom. <br><br>
+
+        -----------User Interactive Guide--------<br>
+    	Press Q to toggle lights on/off<br>
+    	Press E to start/stop light movement
+
+        <div class="sub-heading" id="task1"><br>
+            PART 1 :THE INCLUDE FILES
+        </div>
+    </div><hr>
+    <div class="sub-heading" >
+        glad.h
+    </div>
+    <div class="content">
+        Multi-Language GL/GLES/EGL/GLX/WGL Loader used to load all the OpenGL functions supported on the system
+    </div>
+    <div class="sub-heading" >
+        glfw3.h
+    </div>
+    <div class="content">
+        It provides a simple API for creating windows, contexts and surfaces, receiving input and events.
+    </div>
+    <div class="sub-heading" >
+        shader.h
+    </div>
+    <div class="content">
+        Provides utility functions for generating the shader on the fly,retrieve shader information, activate them and for checking shader compilation.linking errors.
+    </div>
+    <div class="sub-heading" >
+        mesh.h
+    </div>
+    <div class="content">
+        This file provides the setupMesh function which initializes all the buffer objects and arrays.
+    </div>
+    <div class="sub-heading" >
+        model.h
+    </div>
+    <div class="content">
+        Multiple meshes lead up to become a model. It contains the model class which stores all the textures loaded so far, optimization to make sure textures aren't loaded more than once and also draws the models and all its meshes. Also contains important functions for loading all the models in OpenGL with ASSIMP Library.
+    </div>
+
+    <div class="sub-heading" id="task3"><br>
+        PART 2 :THE SHADER FILES
+    </div><hr>
+    <div class="content">
+        We are going to use different set of vertex and fragment shaders when rendering the depth map from light's perspective and when rendering the scene from the camera's perspective. For the light, we are using depth_vs.glsl and depth_fs.glsl. For the camera, we are using the usual vertexshader.glsl and fragmentshader.glsl.
+    </div>
+    <div class="sub-heading" >
+        vertexshader.glsl
+    </div>
+    <div class="content">
+        Vertex shader for getting postion after perspective projection from the camera's point of view.
+    </div>
+    <div class="sub-heading" >
+       	fragmentshader.glsl
+    </div>
+    <div class="content">
+        Fragment shader working on colouring using the color vector and texture vector sent to it.<br>
+        There is external lighting which is a directional light and applies the Phong-Blling model. It renders the scene from the camera's perspective and displays it.
+    </div>
+    <div class="sub-heading" >
+        depth_vs.glsl
+    </div>
+    <div class="content">
+        Vertex shader for getting postion after perspective projection from the light point of view.
+    </div>
+    <div class="sub-heading" >
+       	depth_fs.glsl
+    </div>
+    <div class="content">
+        Doesn't send any color as all we need is the depth buffer. There is no color buffer attached to it. This for the light's shader during the first render.
+    </div>
+
+    <div class="sub-heading" id="task4"><br>
+        PART 3 : THE ALGORITHM
+    </div><hr>
+    <div class="content">
+
+    	After importing the model, the scene renders using the default OpenGL and looks like follows:-<br><br>
+
+    	<img src="images/1.png" style="margin-left: 20px;" height="60%" width="45%"><br><br>
+
+    	First off, we are gonna set up lighting to view the imported model. We will use the Phong-Blinn Illumination Model which calculates the ambient, diffuse and specular lighting. We are gonna first send the light position, camera position and light color to the shader for calculation.<br> <br>
+
+    	<div style="margin-left: 25px"><i>
+        ourShader.use();<br>
+        ourShader.setBool("lightsOn",lightsOn);<br>
+        ourShader.setVec3("cameraPos",cameraPos);<br>
+        ourShader.setVec3("lightPos1", lightPos);<br>
+        ourShader.setVec3("lightColor", vec3(1.0f, 1.0f, 1.0f));<br>
+        ourShader.setMat4("lightSpaceMatrix", lightSpaceMatrix);<br>
+		</i></div><br>
+
+		To calculate the ambient light in the fragmentshader, we set ambient constant as 0.2 and calculate the intensity.<br><br>
+	    
+	    <div style="margin-left: 25px"><i>
+		float ambientStrength = 0.2;<br>
+	    vec3 ambient = ambientStrength * lightColor;<br>
+		</i></div><br>
+
+		To calculate the diffuse light, we use the dot product of the normal and light direction to find the intensity and multiply by the lightcolor.<br><br>
+	    
+	    <div style="margin-left: 25px"><i>
+	    float nDotL = dot(norm, lightDir1);<br>
+	    float diff1 = max(dot(norm, lightDir1), 0.0);<br>
+	    vec3 diffuse1 = diff1*lightColor*nDotL;<br>
+		</i></div><br>
+
+		To calculate the specular light, we use the dot product of the halfway vector and normal direction to find the intensity and raised to the shiness of the surface which is set as 100. It is then multiplied by the light color to find the intensity.<br><br>
+	    
+	    <div style="margin-left: 25px"><i>
+	    vec3 specularCoefficient = pow(max(0.0, dot(surfaceToCamera, reflect(-lightDir1, norm))), materialShininess);<br>
+   		vec3 specular = specularCoefficient * materialSpecularColor * lightColor;<br>
+		</i></div><br>
+
+		The final color is then calculated by summing all of the light intensities and multiplying by the object color.<br><br>
+
+		<div style="margin-left: 25px"><i>
+	    result = (ambient+diffuse1)*color + specular;
+		</i></div><br>
+
+		The scene now renders as follows:-<br><br>
+
+		<img src="images/2.png" style="margin-left: 20px;" height="60%" width="45%"><br><br>
+
+    	The lighting is now set up. We are gonna set the resolution of the shadow map. This will determine the detailing of the shadows and the amount of computing. <br><br>
+
+    	<div style="margin-left: 25px"><i>
+        const GLuint SHADOW_WIDTH = 1280, SHADOW_HEIGHT = 720;<br>
+		</i></div><br>
+
+         The results of the rendering process end up in something which is called a framebuffer object (FBO). Inside this object, lives the color buffer (which is displayed on screen), the depth buffer, and a few other buffers for additional usages.<br>
+        In addition to the default framebuffer, we can create FBOs of its own. These objects can be manipulated and used for various techniques under the control of the application. This user-created FBO is used to create shadow maps using the depth buffer.<br>
+        Now, we are gonna create our own FBO and attach it to current scene so that we can use it to store the depth map. We will assign it a 2D texture which will store the resulting shadow (depth) map. This new generated texture is then assigned to the FBO<br><br>
+        
+        <div style="margin-left: 25px"><i>
+        GLuint depthMapFBO, depthMap;<br>
+        glGenFramebuffers(1, &depthMapFBO);<br>
+	    glGenTextures(1, &depthMap);<br>
+	    glBindTexture(GL_TEXTURE_2D, depthMap);<br>
+	    glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, SHADOW_WIDTH, SHADOW_HEIGHT, 0, GL_DEPTH_COMPONENT, GL_FLOAT, NULL);<br>
+	    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);<br>
+	    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);<br>
+	    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);<br>
+	    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);<br><br>
+	    glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);<br>
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_TEXTURE_2D, depthMap, 0);<br>
+		glDrawBuffer(GL_NONE);<br>
+		glReadBuffer(GL_NONE);<br>
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);<br>
+		</i></div><br>
+
+		Since there is no color or stencil buffer attached we set the glDrawBuffer and glReadBuffer as GL_NONE.<br>
+		We will now create and compile the two different shaders for rendering the depthmap and the scene respectively.<br><br>
+		<div style="margin-left: 25px"><i>
+        Shader ourShader("shaders/vertexshader.glsl", "shaders/fragmentshader.glsl");<br>
+		Shader depthShader("shaders/depth_vs.glsl", "shaders/depth_fs.glsl");<br>
+		</i></div><br>
+
+		Now there were two important things left to do. We will do two render passes. The first one sends the lightMVPMatrix for transformation in lights perspective and calculate the depth map.<br><br>
+
+		<div style="margin-left: 25px"><i>
+        lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);<br>
+        lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 1.0, 0.0));<br>
+        lightSpaceMatrix = lightProjection * lightView;<br>
+
+        glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);<br>
+        glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO);<br>
+            glClear(GL_DEPTH_BUFFER_BIT);<br>
+            renderScene(depthShader,Shelby);<br>
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);<br>
+		</i></div><br>
+
+		Now, the two shaders for the light are very simple. It uses the lightMVP to transform the points on the scene on the depthmap to find the depth and compare it later. The fragment shader does nothing.<br><br>
+
+		<div style="margin-left: 25px"><i>
+		//Vertex Shader<br>
+        #version 330 core<br>
+		layout (location = 0) in vec3 aPos;<br>
+		uniform mat4 lightSpaceMatrix;<br>
+		uniform mat4 model;<br>
+		void main(){<br>
+		   	gl_Position = lightSpaceMatrix * model * vec4(aPos, 1.0);<br>
+		}<br>
+		</i></div><br>
+
+		The second render pass uses the camera's MVP matrix to render the scene with lights and uses the earlier LightMVP to compare it with shadow map and calculate the shadow. This is done by the fragment shader.<br><br>
+
+		<div style="margin-left: 25px"><i>
+		clearResetViewport();<br>
+        sendLightsAndCameraInfoToShader(shader);<br>
+		projection = glm::perspective(glm::radians(fovy), (float)WIDTH / (float)HEIGHT, 0.1f, 100.0f);<br>
+		view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp);<br>
+        glActiveTexture(GL_TEXTURE1);<br>
+        glBindTexture(GL_TEXTURE_2D, depthMap);<br>
+        renderScene(ourShader,Shelby);<br>
+		</i></div><br>
+
+		The vertexshader.glsl calculates the points with respect to the camera like usual and sends the texCoord, LightPos and others to the fragmentShader for light and shadow calcualation.<br><br>
+
+    	<div style="margin-left: 25px"><i>
+		gl_Position = projection * view * model * vec4(aPos, 1.0);<br>
+	    vec4 frag = vec4(model*vec4(aPos, 1.0));<br>
+	    FragPos = vec3(frag.x, frag.y, frag.z);<br>
+	    Normal = transpose(inverse(mat3(model))) * aNormal;<br>
+	    TexCoords = aTexCoords;<br>
+	    FragPosLightSpace = lightSpaceMatrix * vec4(FragPos, 1.0);<br>
+		</i></div><br>
+
+		The fragment shader now calculates the shadows using the following function named ShadowCalculation(); It check the current depth of the pixel to be rendered and if its greater than the depth of that (x,y) in the shadow map, its in the shadow. Else, its in light.<br><br>
+
+		<div style="margin-left: 25px"><i>
+		float ShadowCalculation(vec4 fragPosLightSpace)<br>
+		{<br>
+		    vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;<br>
+		    projCoords = projCoords * 0.5 + 0.5;<br>
+		    float closestDepth = texture(shadowMap, projCoords.xy).r;<br> 		    
+		    float currentDepth = projCoords.z;<br>
+			float shadow = currentDepth> closestDepth  ? 1.0 : 0.0;<br>
+		    return shadow;<br>
+			}<br>
+		</i></div><br>
+
+		The shadow is calculated using the above function and added in the final result color to render the new scene.<br><br>
+
+		<div style="margin-left: 25px"><i>
+		float shadow = ShadowCalculation(FragPosLightSpace); 
+    	result = (ambient + (1.0 - shadow)*diffuse1)*color + specular*(1.0-shadow);
+		</i></div><br>
+
+		The shadows are now setup. The scene is now rendered as follows with shadows.<br><br>
+
+		<img src="images/3.png" style="margin-left: 20px;" height="60%" width="45%"><br><br>
+
+		We can see that there are alternating black and white stripes everywhere. This is called Shadow Acne and we look into it in the next section and how we solved it. We will also look into other problems we faced and changes we made.
+
+    </div>
+    <div class="sub-heading" >
+        Optimizations
+    </div>
+    <div class="content">
+       <h4>1. Shadow Acne</h4>	
+
+       Because the shadow map is limited by resolution, multiple fragments can sample the same value from the depth map when they're relatively far away from the light source. This is generally okay but it becomes a problem when light looks at the surface at a different angle. Several fragments sample the same depth sample.
+       <br><br>
+       We can solve this issue with a small little hack called a shadow bias where we simply offset the depth of the surface (or the shadow map) by a small bias amount such that fragments are not incorrectly considered below the surface. We change the amount of bias based on the surface angle towards the light using dot product<br><br>
+
+       <div style="margin-left: 25px"><i>
+		//In the Shadow Calculation function<br>
+		float bias = max(0.05 * (1.0 - dot(normalize(Normal), normalize(lightPos1 - FragPos))), 0.005);<BR>
+		float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;<BR>
+		</i></div><br>
+
+		The scene now renders as follows with no shadow acne:-<br><br>
+
+		<img src="images/4.png" style="margin-left: 20px;" height="60%" width="45%"><br><br>
+
+		<h4>2. Small Orthographic View Volume</h4>
+
+		We see that we removed the acne but there a huge shadow in the background even though there is nothing that projects the shadow. This is because the orthographic viewing frustum is not big enough and we can increase it by changing the zNear and zFar values.<br><br>
+
+		<div style="margin-left: 25px"><i>
+		float near_plane = 1.0f, far_plane = 20.0f;<br>
+        lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);<br>
+		</i></div><br>
+
+		The scene now renders as follows with no extra random shadow:-<br><br>
+
+		<img src="images/5.png" style="margin-left: 20px;" height="60%" width="45%"><br><br>
+
+		<h4>3. Change in Shadow Map Resolution</h4>
+
+		We have removed the shadow acne and extra shadows and the scene is starting to look good. But on deeper examination we see that the shadows are pixelated and cluttery. This is because of one of the drawbacks of shadow maps that it depends on the resolution of the depth map. On increasing the resolution to 5K we see a much better render.<br><br>
+
+		<img src="images/6.png" style="margin-left: 20px;" height="60%" width="45%">
+    </div>
+
+    <div class="sub-heading" id="samples"><br>
+        Movement of light to see change in shadow
+    </div>
+    <div class="content">
+        We have finally rendered the scene and generated shadows. Now we will examine change in shadow when the light is moved in the scene.<br>
+        To move the lights press E.<br><br>
+
+        <div style="margin-left: 25px"><i>
+        	//key callback func<br>
+			case GLFW_KEY_E:<br>
+			moveLight = !moveLight;<br>
+			break;<br>
+		</i></div><br>
+
+		To actualy move the light we will update the postion of the light by calling updateLight() function in the renderLoop and changing the x postion of the light. We move the light by 0.02 units every frame depending on the bool moveLight which decides if we want to move or not. The light can move between x=-5.0f and x=5.0f <br><br>
+
+		<div style="margin-left: 25px"><i>
+        	void updateLight(){<br>
+				if(!moveLight)<br>
+					return;<br>
+				if(lightPos.x>5.0f){<br>
+					lightPos.x = 5.0f;<br>
+					mUnits *=-1.0f;<br>
+				}<br>
+				else if(lightPos.x<-5.0f){<br>
+					lightPos.x = -5.0f;<br>
+					mUnits *=-1.0f;<br>
+				}<br>
+				lightPos.x = lightPos.x + mUnits;<br>
+			}<br>
+		</i></div><br>
+
+		The scene renders as follows, depicted in the gif given below and this is our final render.
+
+		<h4>Final Render</h4>
+
+		<img src="images/7.gif" style="margin-left: 20px;" height="60%" width="45%">
+
+    </div>	
+
+
+    <div id="team" class="subjects">
+        <div id="main-heading">Team Members</div>
+        <div id="person">
+            <div id="personal-info" style="display: inline; vertical-align: middle;font-family: 'Lato', sans-serif; font-size: 20px;color:royalblue; "><br><br>&nbsp; &nbsp; &nbsp;Name: Dyuti Charavarthy<br><br>&nbsp;&nbsp;&nbsp;
+                ID:2016AAPS0818H</div>
+        </div>
+        <div id="person">
+            <div id="personal-info" style="display: inline; vertical-align: middle;font-family: 'Lato', sans-serif; font-size: 20px;color:royalblue; "><br><br>&nbsp; &nbsp; &nbsp;Name: Vamsi Aribandi<br><br>&nbsp;&nbsp;&nbsp;
+                ID:2016A7PS0803H</div>
+        </div>
+        <div id="person">
+            <div id="personal-info" style="display: inline; vertical-align: middle;font-family: 'Lato', sans-serif; font-size: 20px;color:royalblue; "><br><br>&nbsp; &nbsp; &nbsp;Name: Swayam Shivay<br><br>&nbsp;&nbsp;&nbsp;
+                ID:2015B2A70801H</div>
+        </div>
+
+
+        <div class="content"></div>
+    </div>
+    <br><br>
+    <hr>
+
+
+</body>
+</html>
